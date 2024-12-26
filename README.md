@@ -1,14 +1,16 @@
-# SR-FLIPFLOP-USING-CASE
+### NAME:DINESH KARTHIK R
+### REG NO:24900716
+### EXP:5 SR-FLIPFLOP-USING-CASE
 
-**AIM:**
+### AIM:
 
 To implement  SR flipflop using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED:**
+### SOFTWARE REQUIRED:
 
 Quartus prime
 
-**THEORY**
+### THEORY:
 
 SR Flip-Flop SR flip-flop operates with only positive clock transitions or negative clock transitions. Whereas, SR latch operates with enable signal. The circuit diagram of SR flip-flop is shown in the following figure.
 
@@ -32,17 +34,38 @@ By using three variable K-Map, we can get the simplified expression for next sta
  
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=S+R′Q(t)Q(t+1)=S+R′Q(t)
 
-**Procedure**
+### PROCEDURE:
+1.Type the program in Quartus software.
 
-/* write all the steps invloved */
+2.Compile and run the program.
 
-**PROGRAM**
+3.Generate the RTL schematic and save the logic diagram.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+4.Create nodes for inputs and outputs to generate the timing diagram.
 
-**RTL LOGIC FOR FLIPFLOPS**
+5.For different input combinations generate the timing diagram.
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
 
-**RESULTS**
+###  PROGRAM:
+~~~
+module exptsrff(S,R,clk,Q,Qbar);
+input S,R,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end
+endmodule
+~~~
+### RTL LOGIC:
+![387684687-fd4307f1-6060-4d66-aa81-bedf8581f47b](https://github.com/user-attachments/assets/bd52c6f5-1175-457e-ac49-649ce2726ef9)
+
+### TIMING DIAGRAM:
+![387684790-36b0b394-8cea-410a-9ec8-1b3eb2472f54](https://github.com/user-attachments/assets/a0b63ea8-7726-452f-8372-f76f67fc2879)
+
+### RESULTS:
+The observation of the simulation results and confirm the successful execution of the program.
